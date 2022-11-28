@@ -1,0 +1,224 @@
+<!DOCTYPE html> <!--[if lt IE 7]><html class="hookr function lt-ie9 lt-ie8 lt-ie7 ie"><![endif]--> <!--[if IE 7]><html class="hookr function lt-ie9 lt-ie8 ie7 ie"><![endif]--> <!--[if IE 8]><html class="hookr function lt-ie9 ie8 ie"><![endif]--> <!--[if IE 9]><html class="hookr function ie9 ie"><![endif]--> <!--[if gt IE 9]><html class="hookr function gt-ie9 ie"><![endif]--><html lang="en-US" id="single" class="hookr function" data-site="wordpress" data-version="4.7.4" data-type="function" data-id="1836"><head xmlns="http://www.w3.org/1999/xhtml"><title> get_terms | function | WordPress | hookr.io</title><meta charset="UTF-8"><meta name="author" content="thepassionofthechris \m/," /><meta name="keywords" content="get_terms, function, wordpress, 4.7.4" /><meta name="description" content="Retrieve the terms in a given taxonomy or list of taxonomies." /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"><link rel="shortcut icon" href="http://hookr.io/wp-content/themes/hookr/assets/images/favicon.ico" /><link rel="icon" type="image/png" href="http://hookr.io/wp-content/themes/hookr/assets/images/favicon.png"><link rel="icon" type="image/gif" href="http://hookr.io/wp-content/themes/hookr/assets/images/favicon.gif"><link rel="icon" type="image/jpeg" href="http://hookr.io/wp-content/themes/hookr/assets/images/favicon.jpg"><meta name="google-site-verification" content="Q5dnl0YziNqRLCBxFtc2Rd8vUuueYAt6VIUYZItvEL4" /><script type="text/javascript">/*<![CDATA[*/window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/hookr.io\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.10"}};!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);/*]]>*/</script><style type="text/css">img.wp-smiley,img.emoji{display:inline !important;border:none !important;box-shadow:none !important;height:1em !important;width:1em !important;margin:0
+.07em !important;vertical-align:-0.1em !important;background:none !important;padding:0
+!important}</style><link rel='stylesheet' id='screen-css'  href='http://hookr.io/wp-content/themes/hookr/assets/css/hookr.css?ver=c6950a19dd4471dab1d8f8f466ba05e1' type='text/css' media='screen' /><link rel='stylesheet' id='qtip-css'  href='http://hookr.io/wp-content/themes/hookr/assets/vendor/jquery.qtip.custom/jquery.qtip.min.css?ver=4.4.10' type='text/css' media='screen' /><script type="text/javascript" src="http://hookr.io/wp-content/cache/minify/000000/fU9dGoIwDLsQW_XbHbyAXmCMAsNBsS2otxcYvqFP_UmaJg66x4T8LtzemD427BVtH4fiBC3RncGLoAp0AqWYRDS2lA4ZMw4VMZREKsp-NM46e14PlShpHJc_UwSsawz6R6CbURX38oNzDUwp3egSX1iZ3osif0PIhinVK3YQI9NsWNYRs6dAnCNt0zNWDW4OPw.js"></script><script type="text/javascript" src="http://hookr.io/wp-content/cache/minify/000000/M9YvzdTPzS8tTtXLzcwDAA.js"></script><script type="text/javascript" src="http://hookr.io/wp-content/cache/minify/000000/fZBBDsIwDAQ_RG1Kn8AvuKWJUQ1JHBIXVF5PKOoFKZV8Gc_KK3nAmVHNWCBwPAxfKp4d5ZWPOIncM5pSSAve6jxmygskbyxN4mvwP_Sk6KRSSJ6vS9dDD6eNGkdXbu3hV9nUs7JvSpNqrzXK0uwFKyFJpKg7V3jPwZPp1XjDm7JYz2kUk10XTFHK6LgoXqo5b-YD.js"></script><script type="text/javascript" src="http://hookr.io/wp-content/cache/minify/000000/M9DPyM_PLtJPLC5OLSnWL0vNS8kv0s8qLE0tqtQrLMks0EsuLS7Jz0URys3MAwA.js"></script><script type="text/javascript" src="http://hookr.io/wp-content/cache/minify/000000/M9YvzdRPTUtLTS7RzchMz8gB4hK93Mw8HQP9jPz87CL9xOLi1JJi_axiCF8vsSBTrzgzLz0nFQA.js"></script><link rel='https://api.w.org/' href='http://hookr.io/wp-json/' /><link rel="canonical" href="http://hookr.io/functions/get_terms/" /><link rel="alternate" type="application/json+oembed" href="http://hookr.io/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhookr.io%2Ffunctions%2Fget_terms%2F" /><link rel="alternate" type="text/xml+oembed" href="http://hookr.io/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhookr.io%2Ffunctions%2Fget_terms%2F&#038;format=xml" /><script>/*<![CDATA[*/if('undefined'===typeof Hookr)
+var Hookr={};if('undefined'===typeof Hookr.Util)
+Hookr.Util={};Hookr.Util=jQuery&&jQuery.extend(Hookr.Util,{"adminAjax":"http:\/\/hookr.io\/wp-admin\/admin-ajax.php","themeUrl":"http:\/\/hookr.io\/wp-content\/themes\/hookr\/","apiKey":"wordpress-4.7.4-function-get_terms","actions":{"popover":0,"range":1,"search":2,"stat":3}});/*]]>*/</script><!--[if lt IE 9]><script src="http://hookr.io/wp-content/themes/hookr/assets/js/html5shiv.js"></script><script src="http://hookr.io/wp-content/themes/hookr/assets/js/html5shiv-printshiv.js"></script><![endif]--></head><body id="get_terms" class="single single-function single-format-standard"><div id="gutter"><div><ul id="nav-breadcrumb" role="navigation" class="pivot clear fix"><li class="home"><a title="Go to hookr.io." href="http://hookr.io" class="home">hookr.io</a></li><li>/</li><li><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to 4.7.4." href="http://hookr.io/4.7.4/" class="H_VERSION"><span property="name">4.7.4</span></a><meta property="position" content="2"></span></li><li>/</li><li><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to functions." href="http://hookr.io/4.7.4/functions/" class=""><span property="name">functions</span></a><meta property="position" content="3"></span></li><li>/</li><li class="current_item"><span property="itemListElement" typeof="ListItem"><span property="name">get_terms</span><meta property="position" content="4"></span></li></ul></div></div><header class="jv-fixed"><div> <button class="btn" data-jv-trigger="left"><span></span></button><h1 title="hookr.io"><a href="http://hookr.io" title="hookr.io"><img src="http://hookr.io/wp-content/themes/hookr/assets/images/hookr.svg" title="The WordPress Hook/API Index" alt="The WordPress Hook/API Index"/></a></h1> <nav id="nav-api-types" class="pivot clearfix" data-jv-order="0" data-jv-content="left" data-active="function"><ul role="navigation"><li class="" data-id="all" data-count="6316"><a href="http://hookr.io/4.7.4/all/" title="All">All <span class="count badge">6316</span></a></li><li class="" data-id="new" data-count="6"><a href="http://hookr.io/4.7.4/new/" title="New">New <span class="count badge">6</span></a></li><li class="" data-id="hooks" data-count="2538"><a href="http://hookr.io/4.7.4/hooks/" title="Hooks">Hooks <span class="count badge">2538</span></a></li><li class="" data-id="action" data-count="864"><a href="http://hookr.io/4.7.4/actions/" title="Actions">Actions <span class="count badge">864</span></a></li><li class="" data-id="filter" data-count="1674"><a href="http://hookr.io/4.7.4/filters/" title="Filters">Filters <span class="count badge">1674</span></a></li><li class="" data-id="class" data-count="351"><a href="http://hookr.io/4.7.4/classes/" title="Classes">Classes <span class="count badge">351</span></a></li><li class="" data-id="constant" data-count="566"><a href="http://hookr.io/4.7.4/constants/" title="Constants">Constants <span class="count badge">566</span></a></li><li class="active" data-id="function" data-count="2853"><a href="http://hookr.io/4.7.4/functions/" title="Functions">Functions <span class="count badge">2853</span></a></li><li class="" data-id="shortcode" data-count="8"><a href="http://hookr.io/4.7.4/shortcodes/" title="Shortcodes">Shortcodes <span class="count badge">8</span></a></li></ul> </nav> <nav id="nav-main" class="pivot" data-jv-order="1" data-jv-content="left"><ul role="navigation"><li class="active"><a href="http://hookr.io/all/" title="Core">Core</a></li><li class=""><a href="http://hookr.io/plugins/" title="Plugins">Plugins</a></li><li class=""><a href="http://hookr.io/themes/" title="Themes">Themes</a></li><li class=""><a href="http://hookr.io/features/" title="Features">Features</a></li><li class=""><a href="http://hookr.io/plugin/" title="Plugin">Plugin</a></li><li class=""><a href="http://hookr.io/about/" title="About">About</a></li><li class=""><a href="http://hookr.io/contact/" title="Contact">Contact</a></li></ul> </nav></div> </header><div role="main" id="middle"><div><div id="mainbar"> <article><script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=hookrio" id="_carbonads_js"></script><noscript>derpy.</noscript> <section><h1><strong>get_terms</strong></h1><p>Retrieve the terms in a given taxonomy or list of taxonomies.</p> </section> <section id="description"><h2>Description</h2><pre><div><em>(array|int|WP_Error)</em> get_terms( <span class="param">(array)</span> <a href="#" class="param" data-type="(array) " data-desc="Array or string of arguments<br />to get terms." data-depr="" data-opt="1" title="Array or string of arguments<br />to get terms.">$args = array()</a>, <span class="param">(string)</span> <a href="#" class="param" data-type="(string) " data-desc="Argument array, when using<br />the legacy function<br />parameter format.<br />If present, this parameter<br />will be interpreted as<br />`&dollar;args`, and the<br />first function parameter<br />will be parsed as a taxonomy or<br />array of taxonomies." data-depr="1" data-opt="1" title="Argument array, when using<br />the legacy function<br />parameter format.<br />If present, this parameter<br />will be interpreted as<br />`&dollar;args`, and the<br />first function parameter<br />will be parsed as a taxonomy or<br />array of taxonomies.">$deprecated = ''</a> );&nbsp;</div></pre><p>You can fully inject any customizations to the query before it is sent, as well as control the output with a filter.</p><p> The  filter will be called when the cache has the term and will pass the found term along with the array of <code>$taxonomies</code> and array of <code>$args</code>. This filter is also called before the array of terms is passed and will pass the array of terms, along with the <code>$taxonomies</code> and <code>$args</code>.</p><p> The  filter passes the compiled exclusions along with the <code>$args</code>.</p><p> The  filter passes the ORDER BY clause for the query along with the <code>$args</code> array.</p><p> Prior to 4.5.0, the first parameter of <a href="http://hookr.io/4.7.4/functions/get_terms" title="get_terms" class="code function"><code>get_terms(<em>&hellip;</em>)</code></a> was a taxonomy or list of taxonomies:</p><p> hide_empty => false,</p><p> Since 4.5.0, taxonomies should be passed via the taxonomy argument in the <code>$args</code> array:</p><p> taxonomy => post_tag, hide_empty => false, </section> <section id="returns"><h2>Returns <span class="count">(array<span>|</span>int<span>|</span>WP_Error)</span></h2><p>List of WP_Term instances and their children. Will return WP_Error, if any of $taxonomies do not exist.</p> </section> <section id="params"><h2>Parameters <span class="count">(2)</span></h2><dl><dt> <span class="index">0.</span> <span class="param"> $args </span> &mdash; Optional. <span class="type">(array)</span> => <code>array()</code></dt><dd> Array or string of arguments to get terms.<div id="struct-args" class="struct"><h3>Options</h3><ul><li><a href="#args-list" class="list" title="View List"><span>List</span></a></li><li><a href="#args-code" class="code" title="View Code"><span>Code</span></a></li><li><a href="#args-close" class="close" title="Close Options"><span>Close</span></a></li></ul><div id="args-list"><ul><li> <span class="key">taxonomy</span> <span class="type">(string|array)</span> => <code class="default"> '' </code><div><p>Taxonomy name, or array of taxonomies, to which results should be limited.</p></div></li><li> <span class="key">orderby</span> <span class="type">(string)</span> => <code class="default"> 'name' </code><div><p>Field(s) to order terms by. Accepts term fields ('name', slug,, term_group, term_id , id, description), count for term taxonomy count, include to match the order of the <code>$include</code> param, meta_value, meta_value_num, the value of <code>$meta_key</code>, the array keys of <code>$meta_query</code>, or none to omit the ORDER BY clause.</p></div></li><li> <span class="key">order</span> <span class="type">(string)</span> => <code class="default"> 'ASC' </code><div><p>Whether to order terms in ascending or descending order. Accepts ASC  (ascending) or DESC (descending).</p></div></li><li> <span class="key">hide_empty</span> <span class="type">(bool|int)</span> => <code class="default"> 1 </code><div><p>Whether to hide terms not assigned to any posts. Accepts 1|true or 0|false.</p></div></li><li> <span class="key">include</span> <span class="type">(array|string)</span> => <code class="default"> array() </code><div><p>Array or comma/space-separated string of term ids to include.</p></div></li><li> <span class="key">exclude</span> <span class="type">(array|string)</span> => <code class="default"> array() </code><div><p>Array or comma/space-separated string of term ids to exclude. If <code>$include</code> is non-empty, <code>$exclude</code> is ignored.</p></div></li><li> <span class="key">exclude_tree</span> <span class="type">(array|string)</span> => <code class="default"> array() </code><div><p>Array or comma/space-separated string of term ids to exclude along with all of their descendant terms. If <code>$include</code> is non-empty, <code>$exclude_tree</code> is ignored.</p></div></li><li> <span class="key">number</span> <span class="type">(int|string)</span> => <code class="default"> '' </code><div><p>Maximum number of terms to return. Accepts ''|0 (all) or any positive number.</p></div></li><li> <span class="key">offset</span> <span class="type">(int)</span> => <code class="default"> 0 </code><div><p>The number by which to offset the terms query.</p></div></li><li> <span class="key">fields</span> <span class="type">(string)</span> => <code class="default"> 'all' </code><div><p>Term fields to query for. Accepts all  (returns an array of complete term objects), ids (returns an array of ids), id=>parent (returns an associative array with ids as keys, parent term IDs as values), names (returns an array of term names), count (returns the number of matching terms), id=>name (returns an associative array with ids as keys, term names as values), or id=>slug (returns an associative array with ids as keys, term slugs as values).</p></div></li><li> <span class="key">name</span> <span class="type">(string|array)</span> => <code class="default"> '' </code><div><p> Name or array of names to return term(s) for.</p></div></li><li> <span class="key">slug</span> <span class="type">(string|array)</span> => <code class="default"> '' </code><div><p> Slug or array of slugs to return term(s) for.</p></div></li><li> <span class="key">hierarchical</span> <span class="type">(bool)</span> => <code class="default"> true </code><div><p>Whether to include terms that have non-empty descendants (even if <code>$hide_empty</code> is set to true).</p></div></li><li> <span class="key">search</span> <span class="type">(string)</span> => <code class="default"> '' </code><div><p>Search criteria to match terms. Will be SQL-formatted with wildcards before and after.</p></div></li><li> <span class="key">name__like</span> <span class="type">(string)</span> => <code class="default"> '' </code><div><p>Retrieve terms with criteria by which a term is LIKE <code>$name__like</code>.</p></div></li><li> <span class="key">description__like</span> <span class="type">(string)</span> => <code class="default"> '' </code><div><p>Retrieve terms where the description is LIKE <code>$description__like</code>.</p></div></li><li> <span class="key">pad_counts</span> <span class="type">(bool)</span> => <code class="default"> false </code><div><p>Whether to pad the quantity of a term's children in the quantity of each term's count  object variable.</p></div></li><li> <span class="key">get</span> <span class="type">(string)</span> => <code class="default"> '' </code><div><p>Whether to return terms regardless of ancestry or whether the terms are empty. Accepts all  or empty (disabled).</p></div></li><li> <span class="key">child_of</span> <span class="type">(int)</span> => <code class="default"> 0 </code><div><p>Term ID to retrieve child terms of. If multiple taxonomies are passed, <code>$child_of</code> is ignored.</p></div></li><li> <span class="key">parent</span> <span class="type">(int|string)</span> => <code class="default"> '' </code><div><p>Parent term ID to retrieve direct-child terms of.</p></div></li><li> <span class="key">childless</span> <span class="type">(bool)</span> => <code class="default"> false </code><div><p>True to limit results to terms that have no children. This parameter has no effect on non-hierarchical taxonomies.</p></div></li><li> <span class="key">cache_domain</span> <span class="type">(string)</span> => <code class="default"> 'core' </code><div><p>Unique cache key to be produced when this query is stored in an object cache.</p></div></li><li> <span class="key">update_term_meta_cache</span> <span class="type">(bool)</span> => <code class="default"> true </code><div><p>Whether to prime meta caches for matched terms.</p></div></li><li> <span class="key">meta_query</span> <span class="type">(array)</span> => <code class="default"> null </code><div><p>Meta query clauses to limit retrieved terms by. See <a href="http://hookr.io/classes/WP_Meta_Query" title="WP_Meta_Query" class="code class"><code>WP_Meta_Query</code></a>..</p></div></li><li> <span class="key">meta_key</span> <span class="type">(string)</span> => <code class="default"> '' </code><div><p>Limit terms to those matching a specific metadata key. Can be used in conjunction with <code>$meta_value</code>..</p></div></li></ul></div><div id="args-code"><pre>
+array(
+
+    <span class="comment">/**
+     * <span>Taxonomy name, or array of taxonomies, to which results should be limited.</span>
+     *
+     * @type string|array
+     * @default ''
+     */</span>
+    '<strong class="key">taxonomy</strong>' => <span class="val">''</span>,
+
+    <span class="comment">/**
+     * <span>Field(s) to order terms by. Accepts term fields (<strong>'name'</strong>, <strong>'slug'</strong>, <strong>'term_group'</strong>, <strong>'term_id'</strong>,</span>
+     * <span><strong>'id'</strong>, <strong>'description'</strong>), <strong>'count'</strong> for term taxonomy count, <strong>'include'</strong> to match the <strong>'order'</strong> of the</span>
+     * <span>$include param, <strong>'meta_value'</strong>, <strong>'meta_value_num'</strong>, the value of `$meta_key`, the array keys</span>
+     * <span>of `$meta_query`, or <strong>'none'</strong> to omit the ORDER BY clause.</span>
+     *
+     * @type string
+     * @default <strong>'name'</strong>
+     */</span>
+    '<strong class="key">orderby</strong>' => <span class="val">'name'</span>,
+
+    <span class="comment">/**
+     * <span>Whether to order terms in ascending or descending order. Accepts <strong>'ASC'</strong> (ascending) or <strong>'DESC'</strong></span>
+     * <span>(descending).</span>
+     *
+     * @type string
+     * @default <strong>'ASC'</strong>
+     */</span>
+    '<strong class="key">order</strong>' => <span class="val">'ASC'</span>,
+
+    <span class="comment">/**
+     * <span>Whether to hide terms not assigned to any posts. Accepts 1|true or 0|false.</span>
+     *
+     * @type bool|int
+     * @default 1
+     */</span>
+    '<strong class="key">hide_empty</strong>' => <span class="val">1</span>,
+
+    <span class="comment">/**
+     * <span>Array or comma/space-separated string of term ids to include.</span>
+     *
+     * @type array|string
+     * @default array()
+     */</span>
+    '<strong class="key">include</strong>' => <span class="val">array()</span>,
+
+    <span class="comment">/**
+     * <span>Array or comma/space-separated string of term ids to exclude. If $include is non-empty,</span>
+     * <span>$exclude is ignored.</span>
+     *
+     * @type array|string
+     * @default array()
+     */</span>
+    '<strong class="key">exclude</strong>' => <span class="val">array()</span>,
+
+    <span class="comment">/**
+     * <span>Array or comma/space-separated string of term ids to exclude along with all of their</span>
+     * <span>descendant terms. If $include is non-empty, $exclude_tree is ignored.</span>
+     *
+     * @type array|string
+     * @default array()
+     */</span>
+    '<strong class="key">exclude_tree</strong>' => <span class="val">array()</span>,
+
+    <span class="comment">/**
+     * <span>Maximum number of terms to return. Accepts ''|0 (all) or any positive number.</span>
+     *
+     * @type int|string
+     * @default ''
+     */</span>
+    '<strong class="key">number</strong>' => <span class="val">''</span>,
+
+    <span class="comment">/**
+     * <span>The number by which to offset the terms query.</span>
+     *
+     * @type int
+     */</span>
+    '<strong class="key">offset</strong>' => <span class="val">0</span>,
+
+    <span class="comment">/**
+     * <span>Term fields to query for. Accepts <strong>'all'</strong> (returns an array of complete term objects), <strong>'ids'</strong></span>
+     * <span>(returns an array of ids), <strong>'id=>parent'</strong> (returns an associative array with ids as keys,</span>
+     * <span>parent term IDs as values), <strong>'names'</strong> (returns an array of term names), <strong>'count'</strong> (returns the</span>
+     * <span>number of matching terms), <strong>'id=>name'</strong> (returns an associative array with ids as keys, term</span>
+     * <span>names as values), or <strong>'id=>slug'</strong> (returns an associative array with ids as keys, term slugs as</span>
+     * <span>values).</span>
+     *
+     * @type string
+     * @default <strong>'all'</strong>
+     */</span>
+    '<strong class="key">fields</strong>' => <span class="val">'all'</span>,
+
+    <span class="comment">/**
+     * <span>Optional. Name or array of names to return term(s) for.</span>
+     *
+     * @type string|array
+     * @default ''
+     * @optional
+     */</span>
+    '<strong class="key">name</strong>' => <span class="val">''</span>,
+
+    <span class="comment">/**
+     * <span>Optional. Slug or array of slugs to return term(s) for.</span>
+     *
+     * @type string|array
+     * @default ''
+     * @optional
+     */</span>
+    '<strong class="key">slug</strong>' => <span class="val">''</span>,
+
+    <span class="comment">/**
+     * <span>Whether to include terms that have non-empty descendants (even if $hide_empty is set to</span>
+     * <span>true).</span>
+     *
+     * @type bool
+     * @default true
+     */</span>
+    '<strong class="key">hierarchical</strong>' => <span class="val">true</span>,
+
+    <span class="comment">/**
+     * <span>Search criteria to match terms. Will be SQL-formatted with wildcards before and after.</span>
+     *
+     * @type string
+     * @default ''
+     */</span>
+    '<strong class="key">search</strong>' => <span class="val">''</span>,
+
+    <span class="comment">/**
+     * <span>Retrieve terms with criteria by which a term is LIKE $name__like.</span>
+     *
+     * @type string
+     * @default ''
+     */</span>
+    '<strong class="key">name__like</strong>' => <span class="val">''</span>,
+
+    <span class="comment">/**
+     * <span>Retrieve terms where the description is LIKE $description__like.</span>
+     *
+     * @type string
+     * @default ''
+     */</span>
+    '<strong class="key">description__like</strong>' => <span class="val">''</span>,
+
+    <span class="comment">/**
+     * <span>Whether to pad the quantity of a term's children in the quantity of each term's <strong>"count"</strong> object</span>
+     * <span>variable.</span>
+     *
+     * @type bool
+     * @default false
+     */</span>
+    '<strong class="key">pad_counts</strong>' => <span class="val">false</span>,
+
+    <span class="comment">/**
+     * <span>Whether to return terms regardless of ancestry or whether the terms are empty. Accepts <strong>'all'</strong></span>
+     * <span>or empty (disabled).</span>
+     *
+     * @type string
+     * @default ''
+     */</span>
+    '<strong class="key">get</strong>' => <span class="val">''</span>,
+
+    <span class="comment">/**
+     * <span>Term ID to retrieve child terms of. If multiple taxonomies are passed, $child_of is ignored.</span>
+     *
+     * @type int
+     */</span>
+    '<strong class="key">child_of</strong>' => <span class="val">0</span>,
+
+    <span class="comment">/**
+     * <span>Parent term ID to retrieve direct-child terms of.</span>
+     *
+     * @type int|string
+     * @default ''
+     */</span>
+    '<strong class="key">parent</strong>' => <span class="val">''</span>,
+
+    <span class="comment">/**
+     * <span>True to limit results to terms that have no children. This parameter has no effect on</span>
+     * <span>non-hierarchical taxonomies.</span>
+     *
+     * @type bool
+     * @default false
+     */</span>
+    '<strong class="key">childless</strong>' => <span class="val">false</span>,
+
+    <span class="comment">/**
+     * <span>Unique cache key to be produced when this query is stored in an object cache.</span>
+     *
+     * @type string
+     * @default <strong>'core'</strong>
+     */</span>
+    '<strong class="key">cache_domain</strong>' => <span class="val">'core'</span>,
+
+    <span class="comment">/**
+     * <span>Whether to prime meta caches for matched terms.</span>
+     *
+     * @type bool
+     * @default true
+     */</span>
+    '<strong class="key">update_term_meta_cache</strong>' => <span class="val">true</span>,
+
+    <span class="comment">/**
+     * <span>Meta query clauses to limit retrieved terms by. See `WP_Meta_Query`.</span>
+     *
+     * @type array
+     * @default null
+     */</span>
+    '<strong class="key">meta_query</strong>' => <span class="val">null</span>,
+
+    <span class="comment">/**
+     * <span>Limit terms to those matching a specific metadata key. Can be used in conjunction with</span>
+     * <span>`$meta_value`.</span>
+     *
+     * @type string
+     * @default ''
+     */</span>
+    '<strong class="key">meta_key</strong>' => <span class="val">''</span>
+);        </pre></div><div id="args-close"><p class="hellip">&hellip;</p></div></div><script>;(function($)
+{$('#struct-args').tabs({active:$.cookie('structtab')||0,activate:function(event,ui){$.cookie('structtab',ui.newTab.index(),{path:'/',expires:10});}});})(window.jQuery);</script></dd><dt> <span class="index">1.</span> <span class="param"> $deprecated </span> &mdash; Optional. <span class="type">(string)</span> => <code>''</code></dt><dd> Argument array, when using the legacy function parameter format. If present, this parameter will be interpreted as <code>$args</code>,, and the first function parameter will be parsed as a taxonomy or array of taxonomies.</dd></dl> </section><hr /> <section id="usage"><h2>Usage</h2><pre><ol><li><div>if ( !function_exists( '<span class="func">get_terms</span>' ) ) {&nbsp;</div></li><li><div>    require_once ABSPATH . WPINC . '/taxonomy.php';&nbsp;</div></li><li><div>}&nbsp;</div></li><li><div> &nbsp;</div></li><li><div><span class="comment">// Optional. Array or string of arguments to get terms.</span>&nbsp;</div></li><li><div><span class="param">$args</span> = array(&nbsp;</div></li><li><div>    'taxonomy' => '',&nbsp;</div></li><li><div>    'orderby' => 'name',&nbsp;</div></li><li><div>    'order' => 'ASC',&nbsp;</div></li><li><div>    'hide_empty' => 1,&nbsp;</div></li><li><div>    'include' => array(),&nbsp;</div></li><li><div>    'exclude' => array(),&nbsp;</div></li><li><div>    'exclude_tree' => array(),&nbsp;</div></li><li><div>    'number' => '',&nbsp;</div></li><li><div>    'offset' => 0,&nbsp;</div></li><li><div>    'fields' => 'all',&nbsp;</div></li><li><div>    'name' => '',&nbsp;</div></li><li><div>    'slug' => '',&nbsp;</div></li><li><div>    'hierarchical' => true,&nbsp;</div></li><li><div>    'search' => '',&nbsp;</div></li><li><div>    'name__like' => '',&nbsp;</div></li><li><div>    'description__like' => '',&nbsp;</div></li><li><div>    'pad_counts' => false,&nbsp;</div></li><li><div>    'get' => '',&nbsp;</div></li><li><div>    'child_of' => 0,&nbsp;</div></li><li><div>    'parent' => '',&nbsp;</div></li><li><div>    'childless' => false,&nbsp;</div></li><li><div>    'cache_domain' => 'core',&nbsp;</div></li><li><div>    'update_term_meta_cache' => true,&nbsp;</div></li><li><div>    'meta_query' => null,&nbsp;</div></li><li><div>    'meta_key' => ''&nbsp;</div></li><li><div>);&nbsp;</div></li><li><div><span class="param">$deprecated</span> = '';&nbsp;</div></li><li><div> &nbsp;</div></li><li><div><span class="comment">// NOTICE! Understand what this does before running.</span>&nbsp;</div></li><li><div><span class="param">$result</span> = <span class="func">get_terms</span>(<span class="param">$args</span>, <span class="param">$deprecated</span>);&nbsp;</div></li><li><div>   &nbsp;</div></li></ol></pre></section><hr /> <section id="defined" class="source"><h2>Defined <span class="count">(1)</span></h2><p>The function is defined in the following location(s).</p><dl><dt><strong><a href="http://hookr.io/4.7.4/files/wp-includes-taxonomy/" class="file">/wp-includes/taxonomy.php <span>&nbsp;</span></a></strong></dt><dd><pre><ol data-line="26" class="block" start="1084"><li><div>function get_terms( $args = array(), $deprecated = '' ) {&nbsp;</div></li><li><div>    global $wpdb;&nbsp;</div></li><li><div>&nbsp;</div></li><li><div>    $term_query = new <a href="http://hookr.io/4.7.4/classes/wp_term_query/" data-id="1418551" title="WP_Term_Query" class="class">WP_Term_Query</a>();&nbsp;</div></li><li><div>&nbsp;</div></li><li><div>    /**&nbsp;</div></li><li><div>     * Legacy argument format ($taxonomy, $args) takes precedence.&nbsp;</div></li><li><div>     *&nbsp;</div></li><li><div>     * We detect legacy argument format by checking if&nbsp;</div></li><li><div>     * (a) a second non-empty parameter is passed, or&nbsp;</div></li><li><div>     * (b) the first parameter shares no keys with the default array (ie, it's a list of taxonomies)&nbsp;</div></li><li><div>     */&nbsp;</div></li><li><div>    $_args = <a href="http://hookr.io/4.7.4/functions/wp_parse_args/" data-id="1420353" title="wp_parse_args" class="function">wp_parse_args</a>( $args );&nbsp;</div></li><li><div>    $key_intersect = array_intersect_key( $term_query-&gt;query_var_defaults, (array) $_args );&nbsp;</div></li><li><div>    $do_legacy_args = $deprecated || empty( $key_intersect );&nbsp;</div></li><li><div>&nbsp;</div></li><li><div>    if ( $do_legacy_args ) {&nbsp;</div></li><li><div>        $taxonomies = (array) $args;&nbsp;</div></li><li><div>        $args = <a href="http://hookr.io/4.7.4/functions/wp_parse_args/" data-id="1420353" title="wp_parse_args" class="function">wp_parse_args</a>( $deprecated );&nbsp;</div></li><li><div>        $args['taxonomy'] = $taxonomies;&nbsp;</div></li><li><div>    } else {&nbsp;</div></li><li><div>        $args = <a href="http://hookr.io/4.7.4/functions/wp_parse_args/" data-id="1420353" title="wp_parse_args" class="function">wp_parse_args</a>( $args );&nbsp;</div></li><li><div>        if ( isset( $args['taxonomy'] ) && null !== $args['taxonomy'] ) {&nbsp;</div></li><li><div>            $args['taxonomy'] = (array) $args['taxonomy'];&nbsp;</div></li><li><div>        }&nbsp;</div></li><li><div>    }&nbsp;</div></li><li><div>&nbsp;</div></li><li><div>    if ( ! empty( $args['taxonomy'] ) ) {&nbsp;</div></li><li><div>        foreach ( $args['taxonomy'] as $taxonomy ) {&nbsp;</div></li><li><div>            if ( ! <a href="http://hookr.io/4.7.4/functions/taxonomy_exists/" data-id="1422884" title="taxonomy_exists" class="function">taxonomy_exists</a>( $taxonomy ) ) {&nbsp;</div></li><li><div>                return new <a href="http://hookr.io/4.7.4/classes/wp_error/" data-id="1418158" title="WP_Error" class="class">WP_Error</a>( 'invalid_taxonomy', <a href="http://hookr.io/4.7.4/functions/__/" data-id="1420645" title="__" class="function">__</a>( 'Invalid taxonomy.' ) );&nbsp;</div></li><li><div>            }&nbsp;</div></li><li><div>        }&nbsp;</div></li><li><div>    }&nbsp;</div></li><li><div>&nbsp;</div></li><li><div>    $terms = $term_query-&gt;query( $args );&nbsp;</div></li><li><div>&nbsp;</div></li><li><div>    // Count queries are not filtered, for legacy reasons.&nbsp;</div></li><li><div>    if ( ! is_array( $terms ) ) {&nbsp;</div></li><li><div>        return $terms;&nbsp;</div></li><li><div>    }&nbsp;</div></li><li><div>&nbsp;</div></li><li><div>    /**&nbsp;</div></li><li><div>     * Filters the found terms.&nbsp;</div></li><li><div>     *&nbsp;</div></li><li><div>     * @since 2.3.0&nbsp;</div></li><li><div>     * @since 4.6.0 Added the `$term_query` parameter.&nbsp;</div></li><li><div>     *&nbsp;</div></li><li><div>     * @param array         $terms      Array of found terms.&nbsp;</div></li><li><div>     * @param array         $taxonomies An array of taxonomies.&nbsp;</div></li><li><div>     * @param array         $args       An array of get_terms() arguments.&nbsp;</div></li><li><div>     * @param <a href="http://hookr.io/4.7.4/classes/wp_term_query/" data-id="1418551" title="WP_Term_Query" class="class">WP_Term_Query</a> $term_query The <a href="http://hookr.io/4.7.4/classes/wp_term_query/" data-id="1418551" title="WP_Term_Query" class="class">WP_Term_Query</a> object.&nbsp;</div></li><li><div>     */&nbsp;</div></li><li><div>    return <a href="http://hookr.io/4.7.4/functions/apply_filters/" data-id="1421358" title="apply_filters" class="function">apply_filters</a>( <a href="http://hookr.io/4.7.4/filters/get_terms/" data-id="1423404" title="get_terms" class="filter">'get_terms'</a>, $terms, $term_query-&gt;query_vars['taxonomy'], $term_query-&gt;query_vars, $term_query );&nbsp;</div></li><li><div>}&nbsp;</div></li></ol></pre></dd></dl> </section> </article></div><div id="sidebar"><ul class="widgets"><li> <a href="http://hookr.io/plugin/"><img src="http://hookr.io/wp-content/themes/hookr/assets/images/plugin-download.jpg" /></a></li><li id="versions"><dl><dt>Version(s)</dt><dd><dl><dt>Since</dt><dd> 2.3.0</dd><dt>Others</dt><dd><ul><li><a href="http://hookr.io/4.7.4/functions/get_terms/" class="active">4.7.4</a></li><li><a href="http://hookr.io/4.7.3/functions/get_terms/" class="">4.7.3</a></li><li><a href="http://hookr.io/4.7.2/functions/get_terms/" class="">4.7.2</a></li><li><a href="http://hookr.io/4.7.1/functions/get_terms/" class="">4.7.1</a></li><li><a href="http://hookr.io/4.7/functions/get_terms/" class="">4.7</a></li></ul></dd></dl></dd></dl></li><li id="tags"><dl><dt>Tags</dt><dd><ul><li><span></span>wordpress</li><li><span></span>function</li><li><span></span>get_terms</li><li><span></span>wp-include</li></ul></dd></dl></li></ul></div></div></div><script>Hookr.View.init();Hookr.Single.init();</script><footer><div><ul id="nav-social" class="pivot" role="navigation"><li id="twitter"><a href="http://twitter.com/hookr_io" title="Follow me!"></a></li></ul><div> &copy; 2017 hookr.io <strong>(beta)</strong> | <a href="http://hookr.io/privacy/" title="Privacy">Privacy</a> | Proudly Powered by WordPress</div></div> </footer> <script type="text/javascript" src="http://hookr.io/wp-content/cache/minify/000000/M9EvL9BNzU1KTdHLzcwDAA.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-49583310-1','hookr.io');ga('send','pageview');</script></body></html>
